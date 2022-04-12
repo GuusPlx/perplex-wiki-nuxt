@@ -1,6 +1,5 @@
 <template>
   <main>
-    <Tutorial />
     <BlogGrid>
       <BlogCard
         v-for="(article, idx) in articles"
@@ -12,8 +11,6 @@
 </template>
 
 <script setup>
-console.log('test')
-
 const articles = [
   {
     title: 'Fedosja is Customer Experience Professional van het jaar',
@@ -70,4 +67,5 @@ const articles = [
   font-style: normal;
   font-display: swap;
 }
+
 </style>

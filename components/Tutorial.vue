@@ -29,10 +29,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'NuxtTutorial',
-}
+<script setup>
+
 </script>
 
 <style lang="postcss">
