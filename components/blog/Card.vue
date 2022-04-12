@@ -8,7 +8,7 @@
     </h3>
     <span>Innovatie – 08-10-2021</span>
     <p class="line-clamp line-clamp-4 leading-loose">{{ article.summary }}</p>
-    <Button label="Lees meer" />
+    <Button :to="'/blogDetail'" label="Lees meer" />
   </article>
 </template>
 

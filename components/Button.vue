@@ -1,6 +1,7 @@
 <template>
   <component
     :is="renderedComponent"
+    :to="to"
     class="hover:text-stone-100 flex border-b-2 py-3.5 px-6 font-bold"
   >
     {{ label }}
@@ -10,11 +11,12 @@
 <script setup>
 import { ref } from '@nuxtjs/composition-api'
 
-defineProps({
+const props = defineProps({
   label: {
     type: String,
   },
+  to: String
 })
 
-const renderedComponent = ref('button')
+const renderedComponent = ref( props.to ? 'NuxtLink' : 'button')
 </script>
