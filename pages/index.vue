@@ -2,8 +2,6 @@
   <Tutorial />
 </template>
 
-<script>
-export default {
-  name: 'IndexPage',
-}
+<script setup>
+  console.log('test');
 </script>
