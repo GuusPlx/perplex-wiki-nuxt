@@ -23,7 +23,6 @@
             >Nuxt documentation</a
           >, whether you are new or have previous experience with the
           framework.<br />
-          {{yourData}}
         </p>
       </div>
     </div>
@@ -31,17 +30,7 @@
 </template>
 
 <script setup>
-// import { onMounted, ref } from '@nuxtjs/composition-api'
-  
-//   const yourData = ref(0);
 
-//   yourData.value = ++yourData.value;
-
-//   console.log(yourData.value);
-
-//   onMounted(() => {
-//       console.log('test2');
-//   })
 </script>
 
 <style lang="postcss">
