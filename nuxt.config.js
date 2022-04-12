@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'perplex-blog',
+    title: 'Perplex research - blog',
     htmlAttrs: {
       lang: 'en',
     },
