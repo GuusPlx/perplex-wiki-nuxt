@@ -1,5 +1,8 @@
 <template>
-  <Tutorial />
+  <main>
+    <blog-header />
+    <Tutorial />
+  </main>
 </template>
 
 <script setup>
