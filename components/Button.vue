@@ -1,5 +1,8 @@
 <template>
-  <component :is="renderedComponent">
+  <component
+    :is="renderedComponent"
+    class="hover:text-stone-100 flex border-b-2 py-3.5 px-6 font-bold"
+  >
     {{ label }}
   </component>
 </template>

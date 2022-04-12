@@ -3,11 +3,11 @@
     <picture class="flex overflow-hidden rounded">
       <img class="aspect-video object-cover" :src="article.imageUrl" />
     </picture>
-    <h3 class="text-3xl">{{ article.title }}</h3>
+    <h3 class="text-3xl font-bold leading-normal text-dark">
+      {{ article.title }}
+    </h3>
     <span>Innovatie – 08-10-2021</span>
-    <div class="line-clamp line-clamp-3">
-      <p>{{ article.summary }}</p>
-    </div>
+    <p class="line-clamp line-clamp-4 leading-loose">{{ article.summary }}</p>
     <Button label="Lees meer" />
   </article>
 </template>

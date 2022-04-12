@@ -67,5 +67,4 @@ const articles = [
   font-style: normal;
   font-display: swap;
 }
-
 </style>

@@ -17,6 +17,9 @@ module.exports = {
     extend: {
       spacing: {},
       borderRadius: {},
+      gridTemplateColumns: {
+        cards: 'repeat(auto-fill, minmax(var(--min-card-width, 400px), 1fr))',
+      },
     },
   },
 }
