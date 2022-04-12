@@ -1,9 +1,15 @@
 <template>
-  <Tutorial />
+  <div>
+    grid
+  </div>
 </template>
 
-<script setup>
-  console.log('test');
+<script>
+import { defineComponent } from '@nuxtjs/composition-api'
+
+export default defineComponent({
+  layout: 'MainLayout'
+})
 </script>
 
 <style>

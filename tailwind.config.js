@@ -20,4 +20,23 @@ module.exports = {
         }
       }
     },
+    plugins: [
+      require('@tailwindcss/typography'),
+      function ({ addComponents }) {
+          addComponents({
+              '.container-blog': {
+                  '@screen sm': {
+                      maxWidth: '640px',
+                      paddingRight: '0',
+                      paddingLeft: '0',
+                  },
+                  '@screen xl': {
+                      maxWidth: '700px',
+                      paddingRight: '0',
+                      paddingLeft: '0',
+                  },
+              },
+          });
+        },
+      ],
   }
