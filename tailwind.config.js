@@ -36,14 +36,11 @@ module.exports = {
           paddingRight: '1rem',
           paddingLeft: '1rem',
           '@screen sm': {
-            maxWidth: '640px',
+            maxWidth: 'var(--blog-container-width)',
           },
           '@screen md': {
             paddingRight: '2rem',
             paddingLeft: '2rem',
-          },
-          '@screen xl': {
-            maxWidth: 'var(--blog-container-width)',
           },
         },
       })

@@ -1,5 +1,9 @@
 :root {
-  --blog-container-width: 700px;
+  --blog-container-width: 100%;
+
+  @screen md {
+    --blog-container-width: 700px;
+  }
 }
 
 @font-face {
