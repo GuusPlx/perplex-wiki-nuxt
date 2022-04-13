@@ -1,3 +1,7 @@
+:root{
+  --blog-container-width: 700px;
+}
+
 @font-face {
   font-family: 'Averta';
   src: url('/fonts/Averta-Bold_20211101.woff2') format('woff2');
@@ -22,3 +26,6 @@
 .page-leave-to {
   opacity: 0;
 }
+
+
+
