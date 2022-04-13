@@ -46,6 +46,7 @@ import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   layout: 'MainLayout',
+  scrollToTop: true,
   async asyncData({ $content }) {
     const document = await $content('hello').fetch()
 
