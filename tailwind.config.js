@@ -18,7 +18,7 @@ module.exports = {
       spacing: {},
       borderRadius: {},
       gridTemplateColumns: {
-        cards: 'repeat(auto-fill, minmax(var(--min-card-width, 400px), 1fr))',
+        cards: 'repeat(auto-fill, minmax(min(100%, var(--min-card-width, 320px)), 1fr))',
       },
       fontSize: {
         mainTitle: 'clamp(5.625rem, 4.5vw + 2rem, 8.125rem)',
