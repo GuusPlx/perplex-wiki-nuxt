@@ -1,5 +1,6 @@
 <template lang="">
   <div>
+    <HeaderBar />
     <Nuxt />
     <BlogFooter />
   </div>

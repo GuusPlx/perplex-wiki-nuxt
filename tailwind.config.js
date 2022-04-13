@@ -23,6 +23,9 @@ module.exports = {
       fontSize: {
         mainTitle: 'clamp(5.625rem, 4.5vw + 2rem, 8.125rem)',
       },
+      screens: {
+        '2xl': '1500px',
+      },
     },
   },
   plugins: [
