@@ -7,7 +7,6 @@
 </template>
 <script script>
 export default {
-  transition: 'page',
   scrollToTop: true,
 }
 </script>
