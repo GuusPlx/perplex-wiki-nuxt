@@ -1,12 +1,12 @@
 <template>
-  <article class="flex flex-col justify-start gap-6">
-    <picture class="flex overflow-hidden rounded">
+  <article class="group flex flex-col items-start gap-3">
+    <picture class="mb-2 flex overflow-hidden rounded">
       <img class="aspect-video object-cover" :src="article.imageUrl" />
     </picture>
+    <span class="text-sm"><strong>Innovatie</strong> – 08-10-2021</span>
     <h3 class="text-3xl font-bold leading-normal text-dark">
       {{ article.title }}
     </h3>
-    <span>Innovatie – 08-10-2021</span>
     <p class="line-clamp line-clamp-4 leading-loose">{{ article.summary }}</p>
     <Button :to="'/blogDetail'" label="Lees meer" />
   </article>
