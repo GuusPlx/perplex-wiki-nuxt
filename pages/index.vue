@@ -1,7 +1,7 @@
 <template>
   <div>
     <BlogHeader>
-      <h1 class="text-[120px] font-bold">
+      <h1 class="text-mainTitle font-bold">
         Title<span class="text-pink">.</span>
       </h1>
     </BlogHeader>

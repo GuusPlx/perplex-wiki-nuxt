@@ -20,6 +20,9 @@ module.exports = {
       gridTemplateColumns: {
         cards: 'repeat(auto-fill, minmax(min(100%, var(--min-card-width, 320px)), 1fr))',
       },
+      fontSize: {
+        mainTitle: 'clamp(5.625rem, 4.5vw + 2rem, 8.125rem)',
+      },
     },
   },
   plugins: [
