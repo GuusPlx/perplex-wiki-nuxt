@@ -5,7 +5,7 @@
         Title<span class="text-pink">.</span>
       </h1>
     </BlogHeader>
-    <main class="my-20">
+    <main class="py-20">
       <BlogGrid>
         <BlogCard
           v-for="(article, idx) in articles"
@@ -22,6 +22,8 @@ import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   layout: 'MainLayout',
+  transition: 'page',
+  scrollToTop: true,
   setup() {
     const articles = [
       {
@@ -69,20 +71,4 @@ export default defineComponent({
 })
 </script>
 
-<style>
-@font-face {
-  font-family: 'Averta';
-  src: url('/fonts/Averta-Bold_20211101.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Averta';
-  src: url('/fonts/Averta-Regular_20211101.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-</style>
+<style></style>
