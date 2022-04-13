@@ -1,13 +1,20 @@
 <template>
-  <main class="my-20">
-    <BlogGrid>
-      <BlogCard
-        v-for="(article, idx) in articles"
-        :key="idx"
-        :article="article"
-      />
-    </BlogGrid>
-  </main>
+  <div>
+    <BlogHeader>
+      <h1 class="text-[120px] font-bold">
+        Title<span class="text-pink">.</span>
+      </h1>
+    </BlogHeader>
+    <main class="my-20">
+      <BlogGrid>
+        <BlogCard
+          v-for="(article, idx) in articles"
+          :key="idx"
+          :article="article"
+        />
+      </BlogGrid>
+    </main>
+  </div>
 </template>
 
 <script>
@@ -56,9 +63,9 @@ export default defineComponent({
     ]
 
     return {
-      articles
+      articles,
     }
-  }
+  },
 })
 </script>
 
