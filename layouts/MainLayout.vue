@@ -1,13 +1,12 @@
 <template lang="">
   <div>
-    <Transition name="page" :duration="300">
-      <Nuxt />
-    </Transition>
+    <Nuxt />
     <BlogFooter />
   </div>
 </template>
 <script script>
 export default {
+  transition: 'page',
   scrollToTop: true,
 }
 </script>

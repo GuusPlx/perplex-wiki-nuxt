@@ -51,7 +51,6 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({
-  scrollToTop: true,
   layout: 'MainLayout',
   async asyncData({ $content }) {
     const document = await $content('hello').fetch()
@@ -60,7 +59,7 @@ export default defineComponent({
   },
   head() {
     return {
-      title: this.document.title,
+      title: this.document.title ? this.document.title : '',
       meta: [
         // TODO dit aanpassen naar content van de blogpost
         {
