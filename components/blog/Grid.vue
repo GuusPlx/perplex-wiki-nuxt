@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto grid max-w-screen-xl grid-cols-cards gap-8 px-6 lg:px-8">
+  <div class="container mx-auto grid max-w-screen-xl grid-cols-cards gap-8 px-5 sm:px-8 md:px-10">
     <slot></slot>
   </div>
 </template>

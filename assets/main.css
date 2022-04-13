@@ -1,8 +1,8 @@
-:root{
+:root {
   --blog-container-width: 100%;
 
-  @screen md{
-      --blog-container-width: 700px;
+  @screen md {
+    --blog-container-width: 700px;
   }
 }
 
@@ -24,12 +24,9 @@
 
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity 0s;
 }
 .page-enter,
 .page-leave-to {
   opacity: 0;
 }
-
-
-

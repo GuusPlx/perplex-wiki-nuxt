@@ -1,8 +1,7 @@
 <template lang="">
   <div>
-    <Transition name="page" :duration="300">
-      <Nuxt />
-    </Transition>
+    <HeaderBar />
+    <Nuxt />
     <BlogFooter />
   </div>
 </template>

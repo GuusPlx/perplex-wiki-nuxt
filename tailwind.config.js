@@ -23,6 +23,9 @@ module.exports = {
       fontSize: {
         mainTitle: 'clamp(5.625rem, 4.5vw + 2rem, 8.125rem)',
       },
+      screens: {
+        '2xl': '1500px',
+      },
     },
   },
   plugins: [
@@ -30,15 +33,14 @@ module.exports = {
     function ({ addComponents }) {
       addComponents({
         '.container-blog': {
+          paddingRight: '1rem',
+          paddingLeft: '1rem',
           '@screen sm': {
             maxWidth: 'var(--blog-container-width)',
-            paddingRight: '0',
-            paddingLeft: '0',
           },
-          '@screen xl': {
-            maxWidth: 'var(--blog-container-width)',
-            paddingRight: '0',
-            paddingLeft: '0',
+          '@screen md': {
+            paddingRight: '2rem',
+            paddingLeft: '2rem',
           },
         },
       })
