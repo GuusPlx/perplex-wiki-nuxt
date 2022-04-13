@@ -1,6 +1,7 @@
 <template>
   <div class="bg-blue p-4 text-white">
-    {{ authorName }}
+    <span>{{ authorName }}</span>
+    <span>{{ authorFunction }}</span>
   </div>
 </template>
 
@@ -9,6 +10,7 @@ import { ref } from '@nuxtjs/composition-api'
 
 const props = defineProps({
   authorName: String,
+  authorFunction: String
 })
 
 </script>

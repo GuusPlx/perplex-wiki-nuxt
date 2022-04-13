@@ -25,7 +25,7 @@
       </template>
 
       <template v-slot:author>
-        <author-card author-name="Test"></author-card>
+        <author-card author-name="Test" author-fucntion="Front-end developer"></author-card>
       </template>
 
     </BlogHeader>
