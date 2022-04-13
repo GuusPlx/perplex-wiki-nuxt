@@ -4,16 +4,12 @@
       <div>© Perplex Digital bv.</div>
       <div>
         <ul class="flex justify-end gap-5">
-          <li><NuxtLink to="/">Latest posts</NuxtLink></li>
+          <li v-if="$nuxt.$route.path !== '/'"><NuxtLink to="/">Latest posts</NuxtLink></li>
           <li>
-            <a href="https://www.facebook.com/perplex.nl" target="_blank"
-              >Facebook</a
-            >
+            <a href="https://www.facebook.com/perplex.nl" target="_blank">Facebook</a>
           </li>
           <li>
-            <a href="https://www.instagram.com/perplexarnhem/" target="_blank"
-              >Instagram</a
-            >
+            <a href="https://www.instagram.com/perplexarnhem/" target="_blank">Instagram</a>
           </li>
         </ul>
       </div>
