@@ -18,27 +18,27 @@ module.exports = {
       spacing: {},
       borderRadius: {},
       gridTemplateColumns: {
-        cards: 'repeat(auto-fill, minmax(var(--min-card-width, 400px), 1fr))',
+        cards: 'repeat(auto-fill, minmax(min(100%, var(--min-card-width, 320px)), 1fr))',
       },
     },
   },
   plugins: [
     require('@tailwindcss/typography'),
     function ({ addComponents }) {
-        addComponents({
-            '.container-blog': {
-                '@screen sm': {
-                    maxWidth: '640px',
-                    paddingRight: '0',
-                    paddingLeft: '0',
-                },
-                '@screen xl': {
-                    maxWidth: '700px',
-                    paddingRight: '0',
-                    paddingLeft: '0',
-                },
-            },
-        });
-      },
-    ],
+      addComponents({
+        '.container-blog': {
+          '@screen sm': {
+            maxWidth: '640px',
+            paddingRight: '0',
+            paddingLeft: '0',
+          },
+          '@screen xl': {
+            maxWidth: '700px',
+            paddingRight: '0',
+            paddingLeft: '0',
+          },
+        },
+      })
+    },
+  ],
 }
