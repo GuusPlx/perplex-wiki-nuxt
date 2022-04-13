@@ -1,17 +1,11 @@
 <template>
   <div>
     <BlogHeader>
-      <h1 class="text-mainTitle font-bold">
-        Title<span class="text-pink">.</span>
-      </h1>
+      <h1 class="text-mainTitle font-bold">Title<span class="text-pink">.</span></h1>
     </BlogHeader>
-    <main class="my-20">
+    <main class="py-20">
       <BlogGrid>
-        <BlogCard
-          v-for="(article, idx) in articles"
-          :key="idx"
-          :article="article"
-        />
+        <BlogCard v-for="(article, idx) in articles" :key="idx" :article="article" />
       </BlogGrid>
     </main>
   </div>
@@ -69,20 +63,4 @@ export default defineComponent({
 })
 </script>
 
-<style>
-@font-face {
-  font-family: 'Averta';
-  src: url('/fonts/Averta-Bold_20211101.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Averta';
-  src: url('/fonts/Averta-Regular_20211101.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-</style>
+<style></style>

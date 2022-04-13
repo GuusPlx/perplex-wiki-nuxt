@@ -5,4 +5,9 @@
     <BlogFooter />
   </div>
 </template>
-<script script></script>
+<script script>
+export default {
+  transition: 'page',
+  scrollToTop: true,
+}
+</script>
