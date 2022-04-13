@@ -2,10 +2,10 @@
   <div>
     <BlogHeader>
       <template v-slot:default>
-        <h1 class="text-5xl font-bold leading-normal">{{ document.title }}</h1>
+        <h1 class="text-5xl font-bold leading-normal">{{ blogPost.title }}</h1>
         <div class="mt-[60px] flex flex-col gap-2 md:flex-row">
           <span class="mr-8 text-xl">
-            <span class="font-bold">{{ document.theme }}</span> – {{ document.tags }}
+            <span class="font-bold">{{ blogPost.theme }}</span> – {{ blogPost.tags }}
           </span>
 
           <div class="flex items-center gap-2 text-xl">
@@ -28,22 +28,22 @@
               </g>
             </svg>
             <span>Leestijd:</span>
-            <span class="font-bold">15 minuten</span>
+            <span class="font-bold">{{ blogPost.leestijd }} minuten</span>
           </div>
         </div>
       </template>
 
       <template v-slot:author>
-        <author-card author-name="Test" author-function="Front-end developer" author-image-url="/images/placeholder.png"></author-card>
+        <author-card author-name="Bram Doppen" author-function="Front-end developer" author-image-url="/images/placeholder.png"></author-card>
       </template>
     </BlogHeader>
     <main>
       <BlogDetail>
         <BlogItemHeaderImage />
-        <NuxtContent
+        <div
           class="prose prose-sm my-10 prose-lead:font-bold prose-lead:text-dark sm:prose sm:prose-pink sm:prose-lead:text-dark lg:prose-lg xl:prose-xl"
-          :document="document"
-        />
+          v-html="blogPost.rteContent"
+        ></div>
       </BlogDetail>
     </main>
   </div>
@@ -51,28 +51,52 @@
 
 <script>
 import { defineComponent } from '@nuxtjs/composition-api'
+import gql from 'graphql-tag'
 
+const pageInfo = gql`
+  query ($url: String) {
+    blogPost(url: $url) {
+      title
+      image {
+        url
+      }
+      summary
+      leestijd
+      url
+      rteContent
+    }
+  }
+`
 export default defineComponent({
   layout: 'MainLayout',
-  async asyncData({ $content }) {
-    const document = await $content('hello').fetch()
+  async asyncData({ app, params }) {
+    const client = app.apolloProvider.defaultClient
+    const { pathMatch } = params
+    const res = await client.query({
+      query: pageInfo,
+      variables: {
+        url: `/${pathMatch}`,
+      },
+    })
 
-    return { document }
+    const { blogPost } = res.data
+
+    return {
+      blogPost,
+    }
   },
   head() {
     return {
-      title: this.document.title ? this.document.title : '',
+      title: this.blogPost.title ? this.blogPost.title : '',
       meta: [
         // TODO dit aanpassen naar content van de blogpost
         {
           hid: 'description',
-          name: 'description',
-          content: 'My custom description',
+          name: this.blogPost.title,
+          content: this.blogPost.summary,
         },
       ],
     }
   },
 })
 </script>
-
-<style></style>

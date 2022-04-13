@@ -1,10 +1,10 @@
 <template>
   <div>
     <BlogHeader>
-      <h1 class="text-mainTitle font-bold">Title<span class="text-pink">.</span></h1>
+      <h1 class="text-mainTitle font-bold">{{ page.title }}<span class="text-pink">.</span></h1>
     </BlogHeader>
     <main class="py-20">
-      <BlogGrid>
+      <BlogGrid v-if="articles">
         <BlogCard v-for="(article, idx) in articles" :key="idx" :article="article" />
       </BlogGrid>
     </main>
@@ -13,51 +13,43 @@
 
 <script>
 import { defineComponent } from '@nuxtjs/composition-api'
+import gql from 'graphql-tag'
 
+const pageInfo = gql`
+  query {
+    blogOverview(id: "d99519b8-0ff8-4c02-a502-e5650c182018") {
+      title
+    }
+    allBlogPost {
+      items {
+        image {
+          url
+        }
+        leestijd
+        summary
+        rteContent
+        title
+        category
+        url
+        updateDate
+      }
+    }
+  }
+`
 export default defineComponent({
   layout: 'MainLayout',
-  setup() {
-    const articles = [
-      {
-        title: 'Fedosja is Customer Experience Professional van het jaar',
-        summary:
-          'Afgelopen maandag heeft Fedosja, als één van de drie genomineerden voor de Customer Experience Professional van het jaar, een presentatie gegeven.',
-        imageUrl: '/images/placeholder.png',
-        category: 'Innovatie',
-        publishedDate: '08-10-2021',
-        author: {
-          name: 'Guus Noij',
-          imageUrl: '/images/placeholder.png',
-        },
-      },
-      {
-        title: 'Fedosja is Customer Experience Professional van het jaar',
-        summary:
-          'Afgelopen maandag heeft Fedosja, als één van de drie genomineerden voor de Customer Experience Professional van het jaar, een presentatie gegeven.',
-        imageUrl: '/images/placeholder.png',
-        category: 'Innovatie',
-        publishedDate: '08-10-2021',
-        author: {
-          name: 'Guus Noij',
-          imageUrl: '/images/placeholder.png',
-        },
-      },
-      {
-        title: 'Fedosja is Customer Experience Professional van het jaar',
-        summary:
-          'Afgelopen maandag heeft Fedosja, als één van de drie genomineerden voor de Customer Experience Professional van het jaar, een presentatie gegeven.',
-        imageUrl: '/images/placeholder.png',
-        category: 'Innovatie',
-        publishedDate: '08-10-2021',
-        author: {
-          name: 'Guus Noij',
-          imageUrl: '/images/placeholder.png',
-        },
-      },
-    ]
+  async asyncData({ app }) {
+    const client = app.apolloProvider.defaultClient
+
+    const res = await client.query({
+      query: pageInfo,
+    })
+
+    const { blogOverview, allBlogPost } = res.data
 
     return {
-      articles,
+      page: blogOverview,
+      articles: allBlogPost.items,
     }
   },
 })

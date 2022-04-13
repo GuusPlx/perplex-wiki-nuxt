@@ -46,7 +46,12 @@ export default {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: 'https://perplexheadless.euwest01.umbraco.io',
+        httpEndpoint: 'https://graphql.umbraco.io',
+        httpLinkOptions: {
+          headers: {
+            'umb-project-alias': 'perplexheadless',
+          },
+        },
       },
     },
   },

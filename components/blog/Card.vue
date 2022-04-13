@@ -1,22 +1,29 @@
 <template>
   <article class="group flex flex-col items-start gap-3">
     <picture class="mb-2 flex overflow-hidden rounded">
-      <img class="aspect-video object-cover" :src="article.imageUrl" />
+      <img class="aspect-video object-cover" :src="article.image.url" />
     </picture>
-    <span class="text-sm"><strong>Innovatie</strong> – 08-10-2021</span>
+    <span class="text-sm"
+      ><strong>{{ article.category }}</strong> – {{ formattedDate }}</span
+    >
     <h3 class="text-3xl font-bold leading-normal text-dark">
       {{ article.title }}
     </h3>
     <p class="line-clamp line-clamp-4 leading-loose">{{ article.summary }}</p>
-    <Button :to="'/blogDetail'" label="Lees meer" />
+    <Button :to="article.url" label="Lees meer" />
   </article>
 </template>
 
 <script setup>
-defineProps({
+import { computed } from '@nuxtjs/composition-api'
+const props = defineProps({
   article: {
     type: Object,
   },
+})
+const formattedDate = computed(() => {
+  const date = new Date(props.article.updateDate)
+  return `${date.getDay()}-${date.getMonth()}-${date.getFullYear()}`
 })
 </script>
 
