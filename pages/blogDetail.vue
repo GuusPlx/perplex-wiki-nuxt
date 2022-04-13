@@ -9,7 +9,7 @@
       <BlogDetail>
         <BlogItemHeaderImage />
         <NuxtContent
-          class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl"
+          class="prose prose-sm my-10 prose-lead:font-bold prose-lead:text-dark sm:prose sm:prose-pink sm:prose-lead:text-dark lg:prose-lg xl:prose-xl"
           :document="document"
         />
       </BlogDetail>
