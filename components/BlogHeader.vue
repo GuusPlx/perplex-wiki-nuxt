@@ -3,7 +3,12 @@
         <section class="text-white container-blog mx-auto mt-40">
             <slot></slot>
         </section>
+        <slot name="author"></slot>
     </header>
 </template>
 
 <script setup></script>
+
+<style lang="postcss" scoped>
+    
+</style>

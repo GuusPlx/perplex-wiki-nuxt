@@ -36,7 +36,7 @@ module.exports = {
             paddingLeft: '0',
           },
           '@screen xl': {
-            maxWidth: '700px',
+            maxWidth: 'var(--blog-container-width)',
             paddingRight: '0',
             paddingLeft: '0',
           },
