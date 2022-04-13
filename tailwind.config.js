@@ -33,15 +33,17 @@ module.exports = {
     function ({ addComponents }) {
       addComponents({
         '.container-blog': {
+          paddingRight: '1rem',
+          paddingLeft: '1rem',
           '@screen sm': {
             maxWidth: '640px',
-            paddingRight: '0',
-            paddingLeft: '0',
+          },
+          '@screen md': {
+            paddingRight: '2rem',
+            paddingLeft: '2rem',
           },
           '@screen xl': {
             maxWidth: 'var(--blog-container-width)',
-            paddingRight: '0',
-            paddingLeft: '0',
           },
         },
       })

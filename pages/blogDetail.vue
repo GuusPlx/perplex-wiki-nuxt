@@ -4,7 +4,9 @@
       <template v-slot:default>
         <h1 class="text-5xl font-bold leading-normal">{{ document.title }}</h1>
         <div class="mt-[60px] flex flex-col gap-2 md:flex-row">
-          <span class="mr-8 text-xl"> <span class="font-bold">Planning BV</span> – Health </span>
+          <span class="mr-8 text-xl">
+            <span class="font-bold">{{ document.theme }}</span> – {{ document.tags }}
+          </span>
 
           <div class="flex items-center gap-2 text-xl">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
