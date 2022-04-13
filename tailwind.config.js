@@ -20,25 +20,28 @@ module.exports = {
       gridTemplateColumns: {
         cards: 'repeat(auto-fill, minmax(var(--min-card-width, 400px), 1fr))',
       },
+      fontSize: {
+        mainTitle: 'clamp(5.625rem, 4.5vw + 2rem, 8.125rem)',
+      },
     },
   },
   plugins: [
     require('@tailwindcss/typography'),
     function ({ addComponents }) {
-        addComponents({
-            '.container-blog': {
-                '@screen sm': {
-                    maxWidth: '640px',
-                    paddingRight: '0',
-                    paddingLeft: '0',
-                },
-                '@screen xl': {
-                    maxWidth: '700px',
-                    paddingRight: '0',
-                    paddingLeft: '0',
-                },
-            },
-        });
-      },
-    ],
+      addComponents({
+        '.container-blog': {
+          '@screen sm': {
+            maxWidth: '640px',
+            paddingRight: '0',
+            paddingLeft: '0',
+          },
+          '@screen xl': {
+            maxWidth: '700px',
+            paddingRight: '0',
+            paddingLeft: '0',
+          },
+        },
+      })
+    },
+  ],
 }
