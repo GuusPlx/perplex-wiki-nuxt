@@ -31,7 +31,7 @@ module.exports = {
       addComponents({
         '.container-blog': {
           '@screen sm': {
-            maxWidth: '640px',
+            maxWidth: 'var(--blog-container-width)',
             paddingRight: '0',
             paddingLeft: '0',
           },

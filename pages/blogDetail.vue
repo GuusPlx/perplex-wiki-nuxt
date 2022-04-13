@@ -25,7 +25,7 @@
       </template>
 
       <template v-slot:author>
-        <author-card author-name="Test" author-fucntion="Front-end developer"></author-card>
+        <author-card author-name="Test" author-function="Front-end developer" author-image-url="/images/placeholder.png"></author-card>
       </template>
 
     </BlogHeader>
@@ -52,6 +52,7 @@ export default defineComponent({
 
     return { document }
   },
+
 })
 </script>
 
