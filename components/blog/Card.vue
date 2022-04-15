@@ -1,7 +1,7 @@
 <template>
   <nuxt-link :to="article.url">
     <article class="group flex flex-col items-start gap-3">
-      <picture class="mb-2 flex overflow-hidden rounded">
+      <picture class="mb-2 flex w-full overflow-hidden rounded bg-lightblue transition-all duration-500 group-hover:brightness-110">
         <img class="aspect-video object-cover" :src="article.image.url" />
       </picture>
       <span class="text-sm"

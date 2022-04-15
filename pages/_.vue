@@ -3,12 +3,15 @@
     <BlogHeader>
       <template v-slot:default>
         <h1 class="text-5xl font-bold leading-normal">{{ blogPost.title }}</h1>
-        <div class="mt-[60px] flex flex-col gap-2 md:flex-row">
+        <div class="mt-[60px] flex flex-col justify-between gap-2 md:flex-row">
           <span class="mr-8 text-xl">
-            <span class="font-bold">{{ blogPost.theme }}</span> – {{ blogPost.tags }}
+            <span class="font-bold">{{ blogPost.category }}</span> <span v-if="blogPost.tags">–</span>
+            <ul class="inline-flex gap-2">
+              <li class="inline-block" v-for="tag in blogPost.tags">{{ tag }}</li>
+            </ul>
           </span>
 
-          <div class="flex items-center gap-2 text-xl">
+          <div class="flex shrink-0 items-center gap-2 text-xl">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
               <g id="Group_5919" data-name="Group 5919" transform="translate(-1 -1)">
                 <path
@@ -39,7 +42,7 @@
     </BlogHeader>
     <main>
       <BlogDetail>
-        <BlogItemHeaderImage />
+        <BlogItemHeaderImage v-if="blogPost.image" :src="blogPost.image.url" />
         <div
           class="prose prose-sm my-10 prose-lead:font-bold prose-lead:text-dark sm:prose sm:prose-pink sm:prose-lead:text-dark lg:prose-lg xl:prose-xl"
           v-html="blogPost.rteContent"
@@ -58,8 +61,10 @@ const pageInfo = gql`
     blogPost(url: $url) {
       title
       image {
-        url
+        url(width: 700, height: 500, cropMode: CROP, format: WEBP)
       }
+      category
+      tags
       summary
       leestijd
       url
@@ -89,7 +94,6 @@ export default defineComponent({
     return {
       title: this.blogPost.title ? this.blogPost.title : '',
       meta: [
-        // TODO dit aanpassen naar content van de blogpost
         {
           hid: 'description',
           name: this.blogPost.title,

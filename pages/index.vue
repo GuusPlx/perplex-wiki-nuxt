@@ -23,7 +23,7 @@ const pageInfo = gql`
     allBlogPost {
       items {
         image {
-          url
+          url(width: 600, height: 250, cropMode: CROP, format: WEBP)
         }
         leestijd
         summary
