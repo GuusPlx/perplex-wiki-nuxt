@@ -38,13 +38,13 @@
       </template>
     </BlogHeader>
     <main>
-      <BlogItemBlogDetail>
-        <BlogItemBlogItemHeaderImage />
+      <BlogDetail>
+        <BlogItemHeaderImage />
         <div
           class="prose prose-sm my-10 prose-lead:font-bold prose-lead:text-dark sm:prose sm:prose-pink sm:prose-lead:text-dark lg:prose-lg xl:prose-xl"
           v-html="blogPost.rteContent"
         ></div>
-      </BlogItemBlogDetail>
+      </BlogDetail>
     </main>
   </div>
 </template>
