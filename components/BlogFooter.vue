@@ -1,7 +1,7 @@
 <template>
   <footer class="mt-20 bg-gray py-8">
     <div class="container mx-auto grid grid-cols-1 gap-5 md:grid-cols-2">
-      <div>© Perplex Digital bv.</div>
+      <div>Perplex Digital © {{ new Date().getFullYear() }}</div>
       <div>
         <ul class="flex justify-end gap-5">
           <li v-if="$nuxt.$route.path !== '/'"><NuxtLink to="/">Latest posts</NuxtLink></li>
