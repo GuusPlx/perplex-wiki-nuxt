@@ -1,17 +1,19 @@
 <template>
-  <article class="group flex flex-col items-start gap-3">
-    <picture class="mb-2 flex overflow-hidden rounded">
-      <img class="aspect-video object-cover" :src="article.image.url" />
-    </picture>
-    <span class="text-sm"
-      ><strong>{{ article.category }}</strong> – {{ formattedDate }}</span
-    >
-    <h3 class="text-3xl font-bold leading-normal text-dark">
-      {{ article.title }}
-    </h3>
-    <p class="line-clamp line-clamp-4 leading-loose">{{ article.summary }}</p>
-    <Button :to="article.url" label="Lees meer" />
-  </article>
+  <nuxt-link :to="article.url">
+    <article class="group flex flex-col items-start gap-3">
+      <picture class="mb-2 flex overflow-hidden rounded">
+        <img class="aspect-video object-cover" :src="article.image.url" />
+      </picture>
+      <span class="text-sm"
+        ><strong>{{ article.category }}</strong> – {{ formattedDate }}</span
+      >
+      <h3 class="text-3xl font-bold leading-normal text-dark">
+        {{ article.title }}
+      </h3>
+      <p class="line-clamp line-clamp-4 leading-loose">{{ article.summary }}</p>
+      <Button label="Lees meer" />
+    </article>
+  </nuxt-link>
 </template>
 
 <script setup>
